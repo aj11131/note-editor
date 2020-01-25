@@ -1,0 +1,12 @@
+.container {
+  border-bottom: 1px solid grey;
+  padding: 1em;
+}
+
+.container:hover{
+  background-color: #f4f4f4;
+}
+
+.title {
+  font-weight: bold;
+}

@@ -1,0 +1,172 @@
+header {
+  background-color: rgb(255, 173, 21);
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top:0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  margin-right: auto;
+  margin-left: 0.5em;
+}
+
+h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  background: white;
+  border-radius: 10px;
+  height: 2em;
+  width: 75%;
+  max-width: 400px;
+  text-indent: 10px;
+  margin-left: auto;
+  border: 1px solid grey;
+  display: none;
+}
+input:focus {
+  background: white;
+  outline: none;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+}
+
+i {
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  position: absolute;
+  text-align: right;
+  top: 100%;
+  right: 0;
+  background: rgb(255, 166, 0);
+  width: 100%;
+  transform: scale(1,0);
+  transform-origin: top;
+  transition: transform 150ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  opacity: 0;
+
+}
+
+nav a:hover {
+  color: black
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  margin-right: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  height: 2px;
+  width: 2em;
+  background-color: black;
+  position: relative;
+  border-radius: 1px;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 150ms
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+
+  .logo {
+    grid-column: 1;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+}

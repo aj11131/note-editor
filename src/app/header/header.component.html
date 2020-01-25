@@ -1,0 +1,20 @@
+<header>
+  <h1 class="logo"><a routerLink="" (click)="closeMenu()">Notes</a></h1>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search..." (input)="searchNotes($event)" #search>
+  </div>
+
+  <div class="icon-container">
+    <i class="material-icons" (click)="toggleSearch()" #searchIcon>search</i>
+    <input type="checkbox" class="nav-toggle" id="nav-toggle" #nav>
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <nav #nav>
+      <ul class="nav-list">
+        <li><a routerLink="new" (click)="closeMenu()">New</a></li>
+        <li><a routerLink="settings" (click)="closeMenu()">Settings</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</header>

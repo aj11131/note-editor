@@ -1,0 +1,20 @@
+<div class="container">
+  <form #f="ngForm">
+
+    <div class="title">
+      <label for="title">Title</label>
+      <br>
+      <input type="text" id="title" ngModel name="title" placeholder="Title..." autocomplete="off" aria-required="">
+    </div>
+
+    <div class="content">
+      <label for="content">Content</label>
+      <br>
+      <input type="text" id="body" ngModel name="body" placeholder="Your note..." autocomplete="off" required>
+    </div>
+
+    <button class="cancel-button" routerLink="../">Cancel</button>
+    <button class="save-button" (click)="addNote()" routerLink="../">Save</button>
+
+  </form>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+
+  <form #f="ngForm">
+
+    <div class="title-container">
+      <textarea
+        appTextareaAutoGrow
+        type="text" 
+        name="title" 
+        id="title" 
+        class="title" 
+        ngModel="{{ note.title }}"
+        [disabled]="!editMode"
+        (input) = "saveEditOnInput()"
+        placeholder = "Title..."
+        #titleInput>
+        
+      </textarea>
+      <button class="edit-button" (click)="editNote($event)" [style.background-color]="editMode ? '#f4f4f4' : 'transparent'">
+        <i class="material-icons">edit</i>
+      </button>
+    </div>
+    
+    <div class="date">
+      <p>{{ note.date | date }}</p>
+    </div>
+
+    <br>
+
+    <div class="body">
+      <textarea 
+        appTextareaAutoGrow
+        type="text"
+        name="body" 
+        id="body"
+        ngModel="{{ note.body }}" 
+        [disabled]="!editMode"
+        (input) = "saveEditOnInput()"
+        placeholder = "Your note..."
+        #bodyInput>
+      </textarea>
+    </div>
+
+    <br>
+    
+    <div class="edit-buttons" *ngIf="editMode">
+      <button class="cancel-button" (click)="cancelEdit()">Cancel</button>
+      <button class="save-button" (click)="saveEditOnButtonClick()">Save</button>
+      <button class="delete-button" (click)="deleteNote()">
+        <i class="material-icons">delete</i>
+      </button>        
+    </div>
+  </form>
+</div>

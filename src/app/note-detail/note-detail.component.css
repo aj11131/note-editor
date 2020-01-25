@@ -1,0 +1,85 @@
+.container {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1000px;
+  margin: 6em auto 0 auto;
+}
+
+
+.title-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.title {
+  font-size: 2em;
+}
+
+input {
+  border: none;
+  width: 50%;
+}
+:focus {
+  outline: none;
+}
+:disabled {
+  background: none;
+  color: black;
+}
+
+textarea {
+    overflow: hidden;
+    padding: 0;
+    outline: none;
+    background-color: #D0D0D0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    resize: none;
+    border: none;
+}:enabled {
+  background-color: transparent;
+}
+
+.edit-buttons {
+  display: flex;
+  align-items: center
+}
+
+.delete-button {
+  background-color: transparent;
+	color: grey;
+  font-weight: bold;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  margin-left: 15px;
+  padding: 0.5em;
+}
+
+.edit-button {
+  background-color: transparent;
+	color: grey;
+  font-weight: bold;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button {
+  background: none;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  border-radius: 5px;
+  border: 2px grey solid;
+  padding: 0.75em;
+}
+
+button:hover{
+  background-color: #f4f4f4;
+}
+
+.save-button {
+  margin-left: 1em;
+}

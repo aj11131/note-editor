@@ -1,0 +1,36 @@
+
+.container {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 500px;
+  margin: 6em auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+button {
+  background: none;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  border-radius: 5px;
+  border: 2px grey solid;
+  padding: 0.75em;
+  width: 20em;
+  margin: 5px;
+}
+
+button:hover{
+  background-color: #f4f4f4;
+}
+
+.delete{
+  color: white;
+  background-color: red;
+}
+
+.delete:hover {
+  background-color: darkred;
+}

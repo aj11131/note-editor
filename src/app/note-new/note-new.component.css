@@ -1,0 +1,41 @@
+.container {
+  margin-top: 6em;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1000px;
+  margin: 6em auto 0 auto;
+}
+
+label {
+  display: none;
+}
+
+input {
+  border: none;
+}
+:focus {
+  outline: none;
+}
+
+#title {
+  font-size: 2em;
+}
+
+button {
+  background: none;
+	color: inherit;
+	padding: .75em;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  border: solid  2px grey;
+  border-radius: 5px;
+  margin-top: 3em;
+}
+
+button:hover{
+  background-color: #f4f4f4;
+}
+
+.save-button {
+  margin-left: 1em;
+}
