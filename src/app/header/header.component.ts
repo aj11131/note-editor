@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { NoteService } from '../shared/note.service';
 import { filter } from 'rxjs/operators';
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('nav', {static:true}) nav: ElementRef;
   searchMode = false;
   searchIconVisible = true;
-  
+
   constructor(private noteService: NoteService, private router: Router, private elRef: ElementRef) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     this.router.events.pipe(filter(event => event instanceof NavigationStart)).subscribe(val => {
       if(val['url'] == '/'){
         this.searchIcon.nativeElement.style.display = "block";
-        
+
       } else {
         this.searchIcon.nativeElement.style.display = "none";
         this.search.nativeElement.style.display = "none";
