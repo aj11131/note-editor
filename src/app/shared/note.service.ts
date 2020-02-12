@@ -8,18 +8,17 @@ export class NoteService {
   searchContents = new Subject<string>();
   notes: Note[];
   demo = demoNotes;
-  
   constructor() { }
 
-  initializeNotes(){
-    if(localStorage.getItem('notes') == null){
+  initializeNotes() {
+    if (localStorage.getItem('notes') == null){
       this.notes = [];
     } else {
       this.notes = JSON.parse(localStorage.getItem('notes'));
     }
   }
 
-  getNote(index){
+  getNote(index: number) {
     return this.notes[index];
   }
 
@@ -27,28 +26,28 @@ export class NoteService {
     return this.notes.slice();
   }
 
-  addNote(noteContent){
+  addNote(noteContent: Note){
     this.notes.unshift(
       new Note (noteContent.title, noteContent.date, noteContent.body)
     );
     localStorage.setItem('notes', JSON.stringify(this.notes));
   }
 
-  setDemoNotes(){
+  setDemoNotes() {
     demoNotes.forEach(note => this.notes.push(note));
     localStorage.setItem('notes', JSON.stringify(this.notes));
   }
 
-  deleteNote(index){
+  deleteNote(index: number) {
     this.notes.splice(index, 1);
   }
 
-  deleteAllNotes(){
+  deleteAllNotes() {
     localStorage.clear();
     this.notes = [];
   }
 
-  editNote(dataArr){
+  editNote(dataArr) {
     this.notes[dataArr[0]] = dataArr[1];
     localStorage.setItem('notes', JSON.stringify(this.notes));
   }

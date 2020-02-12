@@ -2,8 +2,6 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-
-import { TextareaAutoGrowDirective } from '../shared/textarea-auto-grow.directive';
 import { NoteService } from '../shared/note.service';
 import { Note } from '../shared/note.model';
 
@@ -13,15 +11,13 @@ import { Note } from '../shared/note.model';
   styleUrls: ['./note-detail.component.css']
 })
 export class NoteDetailComponent implements OnInit {
-  @ViewChild('f', {static:true}) noteForm: NgForm;
-  @ViewChild('titleInput', {static:true}) titleInput: ElementRef;
-  @ViewChild('bodyInput', {static:true}) bodyInput: ElementRef;
+  @ViewChild('f', {static: true}) noteForm: NgForm;
+  @ViewChild('titleInput', {static: true}) titleInput: ElementRef;
+  @ViewChild('bodyInput', {static: true}) bodyInput: ElementRef;
   id: number;
   note: Note;
-  preEditNote: Note = new Note('','','');
+  preEditNote: Note = new Note('', '', '');
   editMode = false;
-  
-
   constructor(private noteService: NoteService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -31,23 +27,24 @@ export class NoteDetailComponent implements OnInit {
 
   // if user trys to exit the noteDetail page without saving changes, the canDeactivate guard will give the user a prompt
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-    if(this.editMode && (this.note.title != this.titleInput.nativeElement.value || this.note.body != this.bodyInput.nativeElement.value)){
+    // tslint:disable-next-line: max-line-length
+    if (this.editMode && (this.note.title !== this.titleInput.nativeElement.value || this.note.body !== this.bodyInput.nativeElement.value)) {
       return confirm('Leave page without saving changes?');
     } else {
       return true;
     }
   }
 
-  // put the note detail screen into 'edit' mode 
-  editNote(e){
+  // put the note detail screen into 'edit' mode
+  editNote(e) {
     this.editMode = true;
     this.preEditNote.title = this.noteForm.value.title;
-    this.preEditNote.body = this.noteForm.value.body;    
+    this.preEditNote.body = this.noteForm.value.body;
   }
 
   // call delete note and pass the index of the note to be deleted
-  deleteNote(){
-    if(confirm('Are you sure you want to delete this note?')){
+  deleteNote() {
+    if (confirm('Are you sure you want to delete this note?')) {
           this.noteService.deleteNote(this.id);
           this.router.navigate(['../']);
     }
@@ -73,7 +70,7 @@ export class NoteDetailComponent implements OnInit {
   saveEditOnButtonClick() {
     this.note.title = this.noteForm.value.title;
     this.note.body = this.noteForm.value.body;
-    if(this.note.title == ''){
+    if (this.note.title === '') {
       this.note.title = 'Untitled';
     }
     this.editMode = !this.editMode;

@@ -10,24 +10,21 @@ import { Router } from '@angular/router';
 export class NoteItemComponent implements OnInit {
   @Input() note: Note;
   @Input() index: number;
-  bodyPreview; string;
+  bodyPreview: string;
   previewLength = 140;
-  
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if (this.note.body.length > this.previewLength){
-      this.bodyPreview = this.note.body.substring(0,this.previewLength) + '...';
+    if (this.note.body.length > this.previewLength) {
+      this.bodyPreview = this.note.body.substring(0, this.previewLength) + '...';
     } else {
-      this.bodyPreview = this.note.body.substring(0,this.previewLength);
+      this.bodyPreview = this.note.body.substring(0, this.previewLength);
     }
-    
   }
 
   // when a note is clicked in the list navigate to the id number so the note-detail component is displayed
-  openDetails(){
+  openDetails() {
     this.router.navigate([this.index]);
   }
-
 }
