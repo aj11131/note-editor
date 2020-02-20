@@ -4,3 +4,7 @@
   max-width: 1000px;
   margin: 6em auto 0 auto;
 }
+
+.emptyMessage {
+  text-align: center;
+}

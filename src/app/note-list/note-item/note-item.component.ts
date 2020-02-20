@@ -11,7 +11,9 @@ export class NoteItemComponent implements OnInit {
   @Input() note: Note;
   @Input() index: number;
   bodyPreview: string;
+  titlePreview: string;
   previewLength = 140;
+  titlePreviewLength = 75;
 
   constructor(private router: Router) { }
 
@@ -20,6 +22,11 @@ export class NoteItemComponent implements OnInit {
       this.bodyPreview = this.note.body.substring(0, this.previewLength) + '...';
     } else {
       this.bodyPreview = this.note.body.substring(0, this.previewLength);
+    }
+    if (this.note.title.length > this.titlePreviewLength) {
+      this.titlePreview = this.note.title.substring(0, this.titlePreviewLength) + '...';
+    } else {
+      this.titlePreview = this.note.title.substring(0, this.titlePreviewLength);
     }
   }
 

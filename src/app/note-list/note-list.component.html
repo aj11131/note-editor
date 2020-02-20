@@ -1,3 +1,4 @@
 <div class="container">
+  <div class="emptyMessage" #emptyMessage>No notes to display. Create a new note, or add demo notes in settings.</div>
   <app-note-item *ngFor="let note of notes; index as i" [note]="note" [index] = i></app-note-item>
 </div>

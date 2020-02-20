@@ -4,13 +4,30 @@
     <div class="title">
       <label for="title">Title</label>
       <br>
-      <input type="text" id="title" ngModel name="title" placeholder="Title..." autocomplete="off" aria-required="">
+      <textarea
+      appTextareaAutoGrow
+      type="text"
+      name="title"
+      id="title"
+      class="title"
+      ngModel
+      placeholder = "Title..."
+      #titleInput>
+      </textarea>
     </div>
 
     <div class="content">
       <label for="content">Content</label>
       <br>
-      <input type="text" id="body" ngModel name="body" placeholder="Your note..." autocomplete="off" required>
+      <textarea
+      appTextareaAutoGrow
+      type="text"
+      name="body"
+      id="body"
+      ngModel
+      placeholder = "Your note..."
+      #bodyInput>
+    </textarea>
     </div>
 
     <button class="cancel-button" routerLink="../">Cancel</button>
