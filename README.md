@@ -6,7 +6,7 @@ EDITING NOTE: To edit an already added note, in the note list click the note. Th
 
 SEARCHING: To display the search bar, click the magnifying glass icon. Input entered in the search bar will filter existing notes to only those that contain the entered string.
 
-SETTINGS: The settings available are add Demo notes and delete all notes.
+SETTINGS: The settings available are add demo notes and delete all notes.
 
 
 # NoteEditor
