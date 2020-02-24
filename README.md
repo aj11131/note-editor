@@ -1,3 +1,5 @@
+DEMO: https://note-editor11131.netlify.com/
+
 USAGE: Create, edit, and search notes persisted in local storage.
 
 NEW NOTE: To add a new note click the new tab located in the header. Here you have the option to input a title and a note body. Neither of this fields are required. The title block will default to "Untitled" and the body will default to blank. If the user attempts to leave the page without saving the note, the app will ask the user wants to leave without saving their changes.
